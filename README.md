@@ -33,18 +33,5 @@ How to combine multiple logical checks to produce a single clean output.
 
 Importance of code clarity, comments, and structure when using decision-making constructs.
 
-## Execution Screenshot
-
-1. Enter a number: 10. 
-   The number is Positive and Even.
-
-<img width="451" height="70" alt="image" src="https://github.com/user-attachments/assets/f3da6fa0-d37d-4df6-99d8-7ce931ad657b" />
-
-2. Enter a number: -7. 
-   The number is Negative and Odd.
-<img width="529" height="64" alt="image" src="https://github.com/user-attachments/assets/a2a5f6a1-1162-41f6-82be-110091def029" />
-
-
-3. Enter a number: 0. 
-   The number is Zero and Even.
-<img width="381" height="70" alt="image" src="https://github.com/user-attachments/assets/b5bf1177-0616-44b3-89b3-a91c0cb03a58" />
+## Execution 
+<img width="1919" height="927" alt="image" src="https://github.com/user-attachments/assets/6fb1baea-6a9d-4553-aa1e-9853f28928d4" />
