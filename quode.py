@@ -1,0 +1,53 @@
+import streamlit as st
+import re
+
+def app():
+    st.set_page_config(page_title="Simple Number Analyzer", layout="centered")
+    st.title("Smart Number Checker")
+    st.markdown("---")
+
+    nums = st.text_input(
+        "Enter a list of integers separated by commas:",
+        placeholder="e.g., 18, -5, 4, 0, -20",
+        key="num_input_field"
+    )
+
+    if st.button("Analyze Numbers", type="primary"):
+        
+        if not nums:
+            st.warning("Please enter at least one number before analyzing.")
+            return
+
+        st.subheader("Analysis Results:")
+        
+        # We need to split the string reliably first (simulating the split in the list comprehension)
+        raw_num_strings = [x.strip() for x in re.split(r',', nums) if x.strip()]
+
+        if not raw_num_strings:
+            st.error("No valid input found after splitting by comma.")
+            return
+            
+        # List Comprehension
+        num_list = [int(x) for x in raw_num_strings] 
+
+        # Main Loop 
+        for num in num_list:
+            # Use the original raw string for output formatting, if available
+            num_str = str(num) 
+
+            if num > 0:
+                if num % 2 == 0:
+                    st.markdown(f":green[**{num_str}**] is Positive and Even")
+                else:
+                    st.markdown(f":green[**{num_str}**] is Positive and Odd")
+            elif num < 0:
+                if num % 2 == 0:
+                    st.markdown(f":red[**{num_str}**] is Negative and Even")
+                else:
+                    st.markdown(f":red[**{num_str}**] is Negative and Odd")
+            else:
+                st.markdown(f":orange[**{num_str}**] is Zero")
+
+        st.markdown("---")
+if __name__ == '__main__':
+    app()
