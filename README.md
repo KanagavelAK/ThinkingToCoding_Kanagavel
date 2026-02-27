@@ -33,5 +33,23 @@ How to combine multiple logical checks to produce a single clean output.
 
 Importance of code clarity, comments, and structure when using decision-making constructs.
 
+## MongoDB Connection
+
+The application connects to MongoDB using the pymongo library and environment variables stored securely in a configuration file.
+
+It creates a MongoDB client using the connection string (MONGO_URI), then accesses the specified database (DB_NAME) and collection (COLLECTION_NAME).
+
+After analyzing the numbers, the application prepares a document containing:
+
+The list of input numbers
+
+The analysis result for each number
+
+The timestamp of submission
+
+This document is inserted into the MongoDB collection using the insert_one() method.
 ## Execution 
-<img width="1919" height="927" alt="image" src="https://github.com/user-attachments/assets/6fb1baea-6a9d-4553-aa1e-9853f28928d4" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/fffc8af2-2bc9-417e-86ad-66a9fb65fa1e" />
+
+<img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/24c19024-f826-44c8-9a68-c39e6e971325" />
