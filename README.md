@@ -49,6 +49,8 @@ The application uses conditional logic to determine:
   `nums: list[int]`
 
 ####  Example:
+<img width="882" height="731" alt="image" src="https://github.com/user-attachments/assets/ce9c6593-95c3-4c11-9ef4-414303853509" />
+
 
 ### 🔹 2. Get All Analyses
 
@@ -58,6 +60,10 @@ The application uses conditional logic to determine:
 
 **Returns:** List of all records (latest first)
 
+#### Example: 
+<img width="1322" height="916" alt="image" src="https://github.com/user-attachments/assets/b1dc669e-7fc4-40b2-af58-25ffdb80c252" />
+
+
 ### 🔹 3. Get Analysis by ID
 
 **GET** `/analyze/{record_id}`
@@ -65,6 +71,10 @@ The application uses conditional logic to determine:
 **Description:** Retrieve a specific record
 
 **Validation:** Checks for valid MongoDB ObjectId
+
+#### Example:
+<img width="1184" height="905" alt="image" src="https://github.com/user-attachments/assets/7fe3de7a-1750-4cd1-8369-edce3d950fdd" />
+
 
 ### 🔹 4. Update Analysis
 
@@ -74,8 +84,16 @@ The application uses conditional logic to determine:
 
 **Condition:** Number of new inputs must match original input length
 
+#### Example:
+<img width="893" height="867" alt="image" src="https://github.com/user-attachments/assets/87ab3fef-b7ff-40ce-93c6-dd2154d35d6e" />
+
+
 ### 🔹 5. Delete Analysis
 
 **DELETE** `/analyze/{record_id}`
 
 **Description:** Delete a specific record
+
+#### Example: 
+<img width="1331" height="863" alt="image" src="https://github.com/user-attachments/assets/9fe351ae-9133-457d-93c6-d68a925b06dc" />
+
