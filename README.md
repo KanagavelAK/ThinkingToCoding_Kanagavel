@@ -1,55 +1,81 @@
-# ThinkingToCoding_Kanagavel
-## The Decision Maker – Smart Number Checker
-## Logic Summary
+# ThinkingToCoding_Kanagavel  
+## The Decision Maker – FastAPI Number Analyzer API
 
-This program takes a number from the user and checks two conditions using nested and multi-branch logic:
+---
 
-Whether the number is positive, negative, or zero.
+##  Project Overview
 
-Whether the number is even or odd.
+This project is a **FastAPI-based backend application** that analyzes numbers using decision-making logic and stores results in **MongoDB**.
 
-It uses nested if–elif–else statements to make decisions step by step.
+It evaluates each number based on two conditions:
 
-## Code Summary
+- Whether the number is **positive, negative, or zero**
+- Whether the number is **even or odd**
 
-Input: Takes an integer value from the user.
+The application exposes **RESTful APIs** to perform **CRUD operations** on number analysis data.
 
-Process:
-   1. First, checks if the number > 0, < 0, or = 0.
-   2. Inside each branch, another condition checks if the number is even or odd using number % 2 == 0.
+---
 
-Output: Displays a clean sentence like:
-   1. “Positive and Even”
-   2. “Negative and Odd”
-   3. “Zero and Even”
+##  Logic Summary
 
-## What I Learned
+The application uses conditional logic to determine:
 
-How to use nested if-else statements effectively.
+- **Positive / Negative / Zero**
+- **Even / Odd (using `number % 2 == 0`)**
 
-The difference between multi-branch and simple conditional logic.
+### Example Outputs:
+-  `Positive and Even`
+-  `Negative and Odd`
+-  `Zero`
 
-How to combine multiple logical checks to produce a single clean output.
+---
 
-Importance of code clarity, comments, and structure when using decision-making constructs.
+##  Tech Stack
 
-## MongoDB Connection
+- **FastAPI** – API framework  
+- **MongoDB** – NoSQL database  
+- **PyMongo** – MongoDB driver  
+- **Python** – Core programming language  
 
-The application connects to MongoDB using the pymongo library and environment variables stored securely in a configuration file.
+---
 
-It creates a MongoDB client using the connection string (MONGO_URI), then accesses the specified database (DB_NAME) and collection (COLLECTION_NAME).
+##  API Endpoints
 
-After analyzing the numbers, the application prepares a document containing:
+### 🔹 1. Create Analysis  
+**POST** `/analyze`
 
-The list of input numbers
+- **Description:** Analyze a list of numbers and store results  
+- **Query Parameter:**  
+  `nums: list[int]`
 
-The analysis result for each number
+####  Example:
 
-The timestamp of submission
+### 🔹 2. Get All Analyses
 
-This document is inserted into the MongoDB collection using the insert_one() method.
-## Execution 
+**GET** `/analyze`
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/fffc8af2-2bc9-417e-86ad-66a9fb65fa1e" />
+**Description:** Retrieve all stored analyses
 
-<img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/24c19024-f826-44c8-9a68-c39e6e971325" />
+**Returns:** List of all records (latest first)
+
+### 🔹 3. Get Analysis by ID
+
+**GET** `/analyze/{record_id}`
+
+**Description:** Retrieve a specific record
+
+**Validation:** Checks for valid MongoDB ObjectId
+
+### 🔹 4. Update Analysis
+
+**PUT** `/analyze/{object_id}`
+
+**Description:** Update an existing analysis
+
+**Condition:** Number of new inputs must match original input length
+
+### 🔹 5. Delete Analysis
+
+**DELETE** `/analyze/{record_id}`
+
+**Description:** Delete a specific record
